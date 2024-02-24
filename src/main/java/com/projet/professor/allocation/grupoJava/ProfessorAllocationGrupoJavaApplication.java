@@ -9,5 +9,5 @@ public class ProfessorAllocationGrupoJavaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProfessorAllocationGrupoJavaApplication.class, args);
 	}
-
+//dev 1 passou aqui.
 }
