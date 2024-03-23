@@ -19,7 +19,7 @@ public class Professor {
 	private String cpf;
 	@ManyToOne(optional = false)
 	@JoinColumn(nullable = false)
-	private Department departament;
+	private Department department;
 
 	public Professor() {
 
