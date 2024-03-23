@@ -54,7 +54,14 @@ public class Professor {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-
+	
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
+	public Department getDepartment() {
+		return department;
+	}
 	@Override
 	public String toString() {
 		return "Professor [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
