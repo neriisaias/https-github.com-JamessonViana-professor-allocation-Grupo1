@@ -21,8 +21,12 @@ public class Allocation {
 //	@Column(nullable = false)
 //	@Enumerated(EnumType.STRING)
 //	private DayOfWeek day;
+
+	// Cuidado com esse nome de coluna ("start"), tem banco que não aceitaria
 	@Column(nullable = false)
 	private Time start;
+
+	// Cuidado com esse nome de coluna ("end"), tem banco que não aceitaria
 	@Column(nullable = false)
 	private Time end;
 	
@@ -38,13 +42,14 @@ public class Allocation {
 	@Column(name = "day", nullable = false)
 	private DayOfWeek day;
 	
-//	@Schema(example = "19:00:00", type = "string")
-	@Column(name = "startHour", nullable = false)
-	private Time startHour;
-
-//	@Schema(example = "22:00:00", type = "string")
-	@Column(name = "endHour", nullable = false)
-	private Time endHour;
+	// Copiou e não apagou
+////	@Schema(example = "19:00:00", type = "string")
+//	@Column(name = "startHour", nullable = false)
+//	private Time startHour;
+//
+////	@Schema(example = "22:00:00", type = "string")
+//	@Column(name = "endHour", nullable = false)
+//	private Time endHour;
 
 	public Allocation() {
 
@@ -97,11 +102,12 @@ public class Allocation {
 		this.professor = professor;
 	}
 	
-	public void setProfessorId(Long id) {
-		Professor professor = new Professor();
-		professor.setId(id);
-		this.setProfessor(professor);
-	}
+	// Isso aqui eu nem expliquei
+//	public void setProfessorId(Long id) {
+//		Professor professor = new Professor();
+//		professor.setId(id);
+//		this.setProfessor(professor);
+//	}
 
 	public Course getCourse() {
 		return course;
@@ -111,35 +117,37 @@ public class Allocation {
 		this.course = course;
 	}
 
-	public void setCourseId(Long id) {
-		Course course = new Course();
-		course.setId(id);
-		this.setCourse(course);
-	}
+	// Isso aqui eu nem expliquei
+//	public void setCourseId(Long id) {
+//		Course course = new Course();
+//		course.setId(id);
+//		this.setCourse(course);
+//	}
 	
-	public DayOfWeek getDayOfWeek() {
-		return day;
-	}
-	public Time getStartHour() {
-		return startHour;
-	}
-
-	public void setStartHour(Time startHour) {
-		this.startHour = startHour;
-	}
-
-	public Time getEndHour() {
-		return endHour;
-	}
-
-	public void setEndHour(Time endHour) {
-		this.endHour = endHour;
-	}
+	// Copiou e não apagou
+//	public DayOfWeek getDayOfWeek() {
+//		return day;
+//	}
+//	public Time getStartHour() {
+//		return startHour;
+//	}
+//
+//	public void setStartHour(Time startHour) {
+//		this.startHour = startHour;
+//	}
+//
+//	public Time getEndHour() {
+//		return endHour;
+//	}
+//
+//	public void setEndHour(Time endHour) {
+//		this.endHour = endHour;
+//	}
 
 	@Override
 	public String toString() {
 		return "Allocation [id=" + id + ", start=" + start + ", end=" + end + ", professor=" + professor + ", course="
-				+ course + ", day=" + day + ", startHour=" + startHour + ", endHour=" + endHour + "]";
+				+ course + ", day=" + day + "]";
 	}
 	 
 }

@@ -84,8 +84,8 @@ public class AllocationService {
 	}
 
 	boolean isEndHourGreaterThanStartHour(Allocation allocation) {
-		return allocation != null && allocation.getStartHour() != null && allocation.getEndHour() != null
-				&& allocation.getEndHour().compareTo(allocation.getStartHour()) > 0;
+		return allocation != null && allocation.getStart() != null && allocation.getEnd() != null
+				&& allocation.getEnd().compareTo(allocation.getStart()) > 0;
 	}
 
 	boolean hasCollision(Allocation newAllocation) {
@@ -106,9 +106,9 @@ public class AllocationService {
 	
 	private boolean hasCollision(Allocation currentAllocation, Allocation newAllocation) {
 		return !currentAllocation.getId().equals(newAllocation.getId())
-				&& currentAllocation.getDayOfWeek() == newAllocation.getDayOfWeek()
-				&& currentAllocation.getStartHour().compareTo(newAllocation.getEndHour()) < 0
-				&& newAllocation.getStartHour().compareTo(currentAllocation.getEndHour()) < 0;
+				&& currentAllocation.getDay() == newAllocation.getDay()
+				&& currentAllocation.getStart().compareTo(newAllocation.getEnd()) < 0
+				&& newAllocation.getStart().compareTo(currentAllocation.getEnd()) < 0;
 	}
 
 }

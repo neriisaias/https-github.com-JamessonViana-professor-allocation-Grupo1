@@ -62,8 +62,9 @@ public class Professor {
 	public Department getDepartment() {
 		return department;
 	}
+
 	@Override
 	public String toString() {
-		return "Professor [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
+		return "Professor [id=" + id + ", name=" + name + ", cpf=" + cpf + ", department=" + department + "]";
 	}
 }
