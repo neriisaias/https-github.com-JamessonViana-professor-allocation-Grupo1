@@ -1,5 +1,8 @@
 package com.projet.professor.allocation.grupoJava.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,6 +13,7 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Professor {
+	@JsonProperty(access = Access.READ_ONLY)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
@@ -20,6 +24,7 @@ public class Professor {
 	@Column(length = 11,nullable = false, unique = true)
 	private String cpf;
 	
+	@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 	@ManyToOne(optional = false)
 	@JoinColumn(nullable = false)
 	private Department department;
@@ -57,13 +62,19 @@ public class Professor {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
 	
 	public Department getDepartment() {
 		return department;
+	}
+	
+	public void setDepartmentId(Long id) {
+		Department department = new Department();
+		department.setId(id);
+		this.setDepartment(department);
 	}
 
 	@Override
