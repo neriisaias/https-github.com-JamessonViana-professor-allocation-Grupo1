@@ -33,6 +33,7 @@ public class ProfessorService {
 	}
 	public List<Professor> findByDepartment(Long departmentId) {
 		Department department = new Department();
+		department.setId(departmentId);
 		return professorRepository.findByDepartment(department);
 	}
 //

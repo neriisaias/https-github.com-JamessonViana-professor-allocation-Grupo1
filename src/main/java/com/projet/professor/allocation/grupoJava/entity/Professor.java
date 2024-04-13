@@ -13,10 +13,13 @@ public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Long id;
+	
 	@Column(length = 70,nullable = false)
 	private String name;
+	
 	@Column(length = 11,nullable = false, unique = true)
 	private String cpf;
+	
 	@ManyToOne(optional = false)
 	@JoinColumn(nullable = false)
 	private Department department;
@@ -62,8 +65,12 @@ public class Professor {
 	public Department getDepartment() {
 		return department;
 	}
+
 	@Override
 	public String toString() {
-		return "Professor [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
+		return "Professor [id=" + id + ", name=" + name + ", cpf=" + cpf + ", department=" + department + "]";
 	}
+	
+	
+	
 }
